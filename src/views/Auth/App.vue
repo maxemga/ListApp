@@ -1,17 +1,17 @@
 <template>
   <div class="auth">
-    <form-modal />
+    <layout />
   </div>
 </template>
 
 <script>
 import { isAuth } from '@/lib/utils/user'
 import { mapMutations } from 'vuex'
-import FormModal from './components/Form/App.vue'
+import Layout from './components/Form/App.vue'
 
 export default {
   name: 'Auth',
-  components: { FormModal },
+  components: { Layout },
   mounted() {
     if (isAuth()) {
       this.$router.push('/list/users')

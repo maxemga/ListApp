@@ -2,7 +2,6 @@ import { getToken } from '../utils/user'
 
 const BASE_URL = 'https://dummyjson.com/'
 
-const POST = 'POST'
 const GET = 'GET'
 
 export async function requestApi({ method = GET, url = '', body = null }) {
@@ -20,7 +19,7 @@ export async function requestApi({ method = GET, url = '', body = null }) {
 
   params.headers['Content-Type'] = 'application/json'
 
-  if (method === POST) {
+  if (method !== GET) {
     params.body = JSON.stringify(body)
   }
 

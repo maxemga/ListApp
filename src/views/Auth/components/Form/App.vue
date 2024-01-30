@@ -4,14 +4,9 @@
       <h2>Вход</h2>
 
       <div class="fields">
-        <app-input placeholder="Логин" :value="login" v-model="login" />
+        <app-input placeholder="Логин" v-model="login" />
 
-        <app-input
-          placeholder="Пароль"
-          :value="password"
-          type="password"
-          v-model="password"
-        />
+        <app-input placeholder="Пароль" type="password" v-model="password" />
       </div>
 
       <app-button title="Авторизоваться" @click="handleClick" />
@@ -51,12 +46,9 @@ export default {
           password: this.password,
         })
 
-        console.log('3123')
-
         this.setAuth({ user: data, token: data.token })
 
         this.$router.push('/list/users')
-        console.log('3123')
       } catch (error) {
         this.notifyError()
       }
